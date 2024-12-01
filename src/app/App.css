@@ -1,0 +1,20 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 100vh;
+}
+
+.darkTheme {
+  color: #ffffff;
+  background-color: #242424;
+}
+
+.lightTheme {
+  color: #242424;
+  background-color: #ffffff;
+}

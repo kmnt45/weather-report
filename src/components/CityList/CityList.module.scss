@@ -1,0 +1,11 @@
+.CityList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+
+  .darkTheme {
+    color: #8c8c8c;
+  }
+}

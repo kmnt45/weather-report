@@ -1,0 +1,54 @@
+.InputCity {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  .title {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .themeToggle {
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .inputDarkTheme {
+    color: $light-text;
+    background-color: $dark-background;
+
+    &::placeholder {
+      color: $light-placeholder;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $dark-background;
+    }
+  }
+
+  .buttonLightTheme:disabled {
+    background-color: $button-light-disabled-bg;
+  }
+
+  .buttonDarkTheme:disabled {
+    color: $button-dark-disabled-text;
+  }
+}
