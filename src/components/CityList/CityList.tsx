@@ -20,7 +20,7 @@ export const CityList: FC = () => {
 
   return (
     <div className={styles.CityList}>
-      {loading && <Spin size="large" />}
+      {loading && <Spin size='large' />}
       {apiError && (
         <Empty
           className={styles[themeStyle]}

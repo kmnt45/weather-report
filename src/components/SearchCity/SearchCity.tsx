@@ -51,10 +51,10 @@ export const SearchCity: FC = () => {
         <Input
           className={styles[inputDarkThemeStyle]}
           value={city}
-          placeholder="Введите город  <3"
+          placeholder='Введите город  <3'
           onChange={handleChangeCity}
         />
-        <Button className={styles[buttonDarkThemeStyle]} disabled={!city.trim()} type="primary" htmlType="submit">
+        <Button className={styles[buttonDarkThemeStyle]} disabled={!city.trim()} type='primary' htmlType='submit'>
           Поиск
         </Button>
       </form>
