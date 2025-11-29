@@ -1,6 +1,5 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-
 import { initialApiState } from '@/constants';
 import { LoadingStage } from '@/enum';
 import { ApiStatusState, ThemeType } from '@/models';
