@@ -13,5 +13,6 @@ export const HandleError = (error: AxiosError<ErrorMessageType>) => {
       console.error(message, 'error');
     }
   }
+
   return { status, message };
 };

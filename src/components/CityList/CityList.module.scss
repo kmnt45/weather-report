@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 .CityList {
   display: flex;
   flex-direction: column;
@@ -6,6 +8,6 @@
   gap: 10px;
 
   .darkTheme {
-    color: #8c8c8c;
+    color: $light-color;
   }
 }

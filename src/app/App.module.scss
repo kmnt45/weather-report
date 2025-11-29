@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 .wrapper {
   margin: 0 auto;
   max-width: 450px;
@@ -10,11 +12,11 @@
 }
 
 .darkTheme {
-  color: #ffffff;
-  background-color: #242424;
+  color: $light-color;
+  background-color: $dark-color;
 }
 
 .lightTheme {
-  color: #242424;
-  background-color: #ffffff;
+  color:  $dark-color;
+  background-color: $light-color;
 }

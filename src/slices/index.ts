@@ -1,10 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
+
 
 import { initialApiState } from '@/constants';
 import { LoadingStage } from '@/enum';
 import { ApiStatusState, ThemeType } from '@/models';
 import { IWeather } from '@/models';
 import { getCity } from '@/service';
+import { RootState } from '@/store';
 
 export interface InitialState {
   weather: ApiStatusState<IWeather[]>;
@@ -31,19 +33,30 @@ const weatherSlice = createSlice({
     builder
       .addCase(getCity.pending, (state) => {
         state.weather.apiData = [];
+
         state.weather.apiError = null;
+
         state.weather.apiStatus = LoadingStage.LOADING;
       })
       .addCase(getCity.fulfilled, (state, { payload }) => {
         state.weather.apiData = payload;
+
         state.weather.apiStatus = LoadingStage.LOAD;
       })
       .addCase(getCity.rejected, (state, { payload }) => {
         state.weather.apiStatus = LoadingStage.LOAD;
+
         state.weather.apiError = payload || null;
       });
   },
 });
 
+export const selectWeatherState = (state: RootState) => state.weather;
+
+export const selectTheme = createSelector([selectWeatherState], (weatherState) => weatherState.theme);
+
+export const selectWeather = createSelector([selectWeatherState], (weather) => weather.weather);
+
 export const { toggleTheme } = weatherSlice.actions;
-export default weatherSlice.reducer;
+
+export const weatherReducer = weatherSlice.reducer;

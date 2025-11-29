@@ -3,14 +3,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { ConfigProvider } from 'antd';
-
 import { Provider } from 'react-redux';
-import { store } from '@/store';
 
 import { App } from '@/app/App.tsx';
+import { store } from '@/store';
 
 import 'normalize.css';
-import './index.css';
+import '@/styles/global.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

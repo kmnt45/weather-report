@@ -6,14 +6,14 @@ import { Button, Input } from 'antd';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { useAppSelector } from '@/hooks/useAppSelector';
 import { getCity } from '@/service';
-import { toggleTheme } from '@/slices';
+import { selectTheme, toggleTheme } from '@/slices';
 
 import styles from './SearchCity.module.scss';
 
 export const SearchCity: FC = () => {
   const dispatch = useAppDispatch();
 
-  const theme = useAppSelector((state) => state.weather.theme);
+  const theme = useAppSelector(selectTheme);
 
   const [city, setCity] = useState('');
 
@@ -34,6 +34,7 @@ export const SearchCity: FC = () => {
   };
 
   const inputDarkThemeStyle = theme === 'dark' ? 'inputDarkTheme' : 'inputLightTheme';
+
   const buttonDarkThemeStyle = theme === 'dark' ? 'buttonDarkTheme' : 'buttonLightTheme';
 
   const themeIcon = theme === 'dark' ? <MoonOutlined /> : <SunOutlined />;

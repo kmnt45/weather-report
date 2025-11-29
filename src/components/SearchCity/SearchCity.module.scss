@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 .InputCity {
   width: 100%;
   display: flex;
@@ -31,8 +33,8 @@
   }
 
   .inputDarkTheme {
-    color: $light-text;
-    background-color: $dark-background;
+    color: $light-color;
+    background-color: $dark-color;
 
     &::placeholder {
       color: $light-placeholder;
@@ -40,7 +42,7 @@
 
     &:hover,
     &:focus {
-      background-color: $dark-background;
+      background-color: $dark-color;
     }
   }
 

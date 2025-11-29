@@ -26,6 +26,7 @@ export const getCity = createAsyncThunk<IWeather[], string, { rejectValue: Error
           const { data } = await configuredAxios.get<IWeather>('/data/2.5/weather', {
             params: { lat, lon },
           });
+
           return data;
         }),
       );
@@ -33,6 +34,7 @@ export const getCity = createAsyncThunk<IWeather[], string, { rejectValue: Error
       return weatherData;
     } catch (error) {
       const errorObject = HandleError(error as AxiosError<ErrorMessageType>);
+
       return rejectWithValue(errorObject);
     }
   },

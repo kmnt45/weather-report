@@ -5,11 +5,13 @@ import { Empty, Spin } from 'antd';
 import { CityCard } from '@/components/CityCard';
 import { LoadingStage } from '@/enum';
 import { useAppSelector } from '@/hooks/useAppSelector';
+import { selectWeather } from '@/slices';
 
 import styles from './CityList.module.scss';
 
 export const CityList: FC = () => {
-  const { apiData, apiStatus, apiError } = useAppSelector((state) => state.weather.weather);
+  const { apiData, apiStatus, apiError } = useAppSelector(selectWeather);
+
   const theme = useAppSelector((state) => state.weather.theme);
 
   const loading = apiStatus === LoadingStage.LOADING;
